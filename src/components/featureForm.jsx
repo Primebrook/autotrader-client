@@ -1,12 +1,13 @@
 import { Row, Col, Button, Form, Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import Feature from './feature'
 
 const Features = () => {
 
-
+    const rowClass = 'justify-content-md-center mb-4'
     const { register, handleSubmit, formState } = useForm();
-    const onSubmit = (data) => console.log(data);
-    console.log(formState.errors)
+    const onSubmit = (e) => console.log(e);
+    console.log(Object.values(formState.isValid))
 
     return (
         <div>
@@ -14,28 +15,76 @@ const Features = () => {
 
         {
         (!formState.isValid && formState.isSubmitted) ? 
-        <Alert variant="danger"> {Object.values(formState.errors).map( (e, idx) => {return (<p key={idx}>{e.message}</p>)} )} </Alert> : <Alert variant="success">Please fill in the form</Alert>
+        <Alert variant="danger"> {Object.values(formState.errors).map( (e, idx) => {return (<p key={idx}>{e.message}</p>);} )} </Alert> 
+        : <Alert variant="success">Please fill in the form</Alert>
         }
 
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <Row className="justify-content-md-center">
+
+            <Row className={rowClass}>
                 <Col md>
-                    <Form.Group controlId='formManufactureYear'>
-                        <Form.Label>Manufacture Year</Form.Label>
-                        <Form.Control type="text" placeholder="e.g. 2008" 
-                        {...register("e.g. 2008", {required: {value: true, message: "say suin"}, pattern: {value:/^[0-9]+$/, message: "gotta be an integer"}})}
-                        />
-                    </Form.Group>
+                    <Feature featureName="ManufactureYear" reg={register}/>
                 </Col>
                 <Col>
-                    <Form.Group controlId='formMileage'>
-                        <Form.Label>Mileage</Form.Label>
-                        <Form.Control type="text" placeholder="e.g. 5000"
-                        {...register("e.g. 5000", {required: {value: true, message: "say suin"}, pattern: {value:/^[0-9]+$/, message: "gotta be an integer"}})}
-                        />
-                    </Form.Group>
+                    <Feature featureName="Mileage" reg={register}/>
                 </Col>
             </Row>
+
+            <Row className={rowClass}>
+                <Col md>
+                    <Feature featureName="EngineSize" reg={register}/>
+                </Col>
+                <Col>
+                    <Feature featureName="TopSpeed" reg={register}/>
+                </Col>
+            </Row>
+
+            <Row className={rowClass}>
+                <Col md>
+                    <Feature featureName="EnginePower" reg={register}/>
+                </Col>
+                <Col>
+                    <Feature featureName="EngineTorque" reg={register}/>
+                </Col>
+            </Row>
+
+            <Row className={rowClass}>
+                <Col md>
+                    <Feature featureName="Length" reg={register}/>
+                </Col>
+                <Col>
+                    <Feature featureName="Wheelbase" reg={register}/>
+                </Col>
+            </Row>
+
+            <Row className={rowClass}>
+                <Col md>
+                    <Feature featureName="Width" reg={register}/>
+                </Col>
+                <Col>
+                    <Feature featureName="FuelTankCapacity" reg={register}/>
+                </Col>
+            </Row>
+
+            <Row className={rowClass}>
+                <Col md>
+                    <Feature featureName="BootSpaceSeatsUp" reg={register}/>
+                </Col>
+                <Col>
+                    <Feature featureName="Urban" reg={register}/>
+                </Col>
+            </Row>
+
+            <Row className={rowClass}>
+                <Col md>
+                    <Feature featureName="ExtraUrban" reg={register}/>
+                </Col>
+                <Col>
+                    <Feature featureName="Co2Emissions" reg={register}/>
+                </Col>
+            </Row>
+
+
             <div className="text-center mt-4 mb-4">
                 <Button size="lg" variant="primary" type="submit">Predict</Button>
             </div>
