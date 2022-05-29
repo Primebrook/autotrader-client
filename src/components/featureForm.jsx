@@ -1,10 +1,10 @@
-import { Row, Col, Button, Form, Alert } from 'react-bootstrap';
+import { Row, Col, Form, Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Feature from './feature'
 
 const Features = ({ onSubmit, predictButton }) => {
 
-    const rowClass = 'justify-content-md-center mb-4'
+    const rowClass = 'justify-content-md-center mb-2 mt-2'
     const { register, handleSubmit, formState } = useForm();
 
     return (
@@ -93,7 +93,6 @@ const Features = ({ onSubmit, predictButton }) => {
 
 
             <div className="text-center mt-4 mb-4">
-                {/* <Button size="lg" variant="primary" type="submit">Predict</Button> */}
                 {predictButton}
             </div>
         </Form>
