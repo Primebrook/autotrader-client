@@ -2,12 +2,10 @@ import { Row, Col, Button, Form, Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Feature from './feature'
 
-const Features = () => {
+const Features = ({ onSubmit, predictButton }) => {
 
     const rowClass = 'justify-content-md-center mb-4'
     const { register, handleSubmit, formState } = useForm();
-    const onSubmit = (e) => console.log(e);
-    console.log(Object.values(formState.isValid))
 
     return (
         <div>
@@ -23,7 +21,7 @@ const Features = () => {
 
             <Row className={rowClass}>
                 <Col md>
-                    <Feature featureName="ManufactureYear" reg={register}/>
+                    <Feature featureName="ManufacturedYear" reg={register}/>
                 </Col>
                 <Col>
                     <Feature featureName="Mileage" reg={register}/>
@@ -84,9 +82,19 @@ const Features = () => {
                 </Col>
             </Row>
 
+            <Row className={rowClass}>
+                <Col md>
+                    <Feature featureName="Height" reg={register}/>
+                </Col>
+                <Col>
+                {/* empty column */}
+                </Col>
+            </Row>
+
 
             <div className="text-center mt-4 mb-4">
-                <Button size="lg" variant="primary" type="submit">Predict</Button>
+                {/* <Button size="lg" variant="primary" type="submit">Predict</Button> */}
+                {predictButton}
             </div>
         </Form>
         </div>

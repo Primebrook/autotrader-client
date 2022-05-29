@@ -4,14 +4,14 @@ import { Form } from 'react-bootstrap';
 const Feature = (props) => {
 
     const allConfigs = {
-        'ManufactureYear': {
-            'controlId': 'formManufactureYear',
-            'label': 'Manufacture Year',
+        'ManufacturedYear': {
+            'controlId': 'formManufacturedYear',
+            'label': 'Manufactured Year',
             'inputType': 'number',
             'placeholder': 'e.g. 2008',
             'validation': { 
                 required: {value: true, message: "Input required."},
-                pattern: {value:/^[0-9]+$/, message: "Manufacture Year must be a valid year e.g. 2008."} }
+                pattern: {value:/^[0-9]+$/, message: "Manufactured Year must be a valid year e.g. 2008."} }
         },
         'Mileage': {
             'controlId': 'formMileage',
@@ -62,6 +62,15 @@ const Feature = (props) => {
                 required: {value: true, message: "Input required."},
                 pattern: {value:/^[0-9]+$/, message: "Engine Torque must be a valid an integer e.g. 50"} 
             }
+        },
+        'Height': {
+            'controlId': 'formHeight',
+            'label': 'Height',
+            'inputType': 'number',
+            'placeholder': 'e.g. 2008',
+            'validation': { 
+                required: {value: true, message: "Input required."},
+                pattern: {value:/^[0-9]+$/, message: "Height must be a valid integer e.g. 5."} }
         },
         'Length': {
             'controlId': 'formLength',
