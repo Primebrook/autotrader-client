@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  const returnPredictionData = false;
   const [isPending, setIsPending] = useState(false); // monitors when the predict button is pressed
+  const [predictionPayload, setPredictionPayload] = useState(null);
 
   function formatKeyForPython (key) {
     const result1 = key.replace(/([A-Z])/g, " $1" ); // adds 1 whitespace to the left of any capital letter.
@@ -26,26 +26,18 @@ function App() {
   }
 
   const onSubmit = (formData, event) => {
-    console.log('formData', formData);
+
     const formattedFormData = formatObjectForBackend(formData)   
-    console.log('formattedFormData', formattedFormData) 
-
     setIsPending(true); // if the predict button is pressed with a valid submission then we set isPending to True
-
-
-    fetch('http://localhost:5000', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formattedFormData)
-    })
+    fetch('http://localhost:5000', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formattedFormData)})
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      // here we would do whatever we wanted to do with the data before setting the isPending back to False.
       setIsPending(false);
-    });
-    };
-
+      setPredictionPayload(data);
+    })
+    
+  };
 
   return (
     <div className="App">
@@ -60,7 +52,7 @@ function App() {
                   }
             />
         </Container>
-        {returnPredictionData && <Container><Prediction/></Container>}
+        {predictionPayload && <Container className="justify-content-md-center mb-4 mt-4"><Prediction predictionPayload={predictionPayload}/></Container>}
       </header>
     </div>
   );
