@@ -7,7 +7,7 @@ const Feature = (props) => {
         'ManufactureYear': {
             'controlId': 'formManufactureYear',
             'label': 'Manufacture Year',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 2008',
             'validation': { 
                 required: {value: true, message: "Input required."},
@@ -16,7 +16,7 @@ const Feature = (props) => {
         'Mileage': {
             'controlId': 'formMileage',
             'label': 'Mileage',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5000',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -26,7 +26,7 @@ const Feature = (props) => {
         'EngineSize': {
             'controlId': 'formEngineSize',
             'label': 'Engine Size',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 10',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -36,7 +36,7 @@ const Feature = (props) => {
         'TopSpeed': {
             'controlId': 'formTopSpeed',
             'label': 'Top Speed',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 120',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -46,7 +46,7 @@ const Feature = (props) => {
         'EnginePower': {
             'controlId': 'formEnginePower',
             'label': 'Engine Power',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -56,7 +56,7 @@ const Feature = (props) => {
         'EngineTorque': {
             'controlId': 'formEngineTorque',
             'label': 'Engine Torque',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -66,7 +66,7 @@ const Feature = (props) => {
         'Length': {
             'controlId': 'formLength',
             'label': 'Length',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -76,7 +76,7 @@ const Feature = (props) => {
         'Wheelbase': {
             'controlId': 'formWheelbase',
             'label': 'Wheelbase',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -86,7 +86,7 @@ const Feature = (props) => {
         'Width': {
             'controlId': 'formWidth',
             'label': 'Width',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -96,7 +96,7 @@ const Feature = (props) => {
         'FuelTankCapacity': {
             'controlId': 'formFuelTankCapacity',
             'label': 'Fuel Tank Capacity',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -106,7 +106,7 @@ const Feature = (props) => {
         'BootSpaceSeatsUp': {
             'controlId': 'formBootSpaceSeatsUp',
             'label': 'Boot Space Seats Up',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -116,7 +116,7 @@ const Feature = (props) => {
         'Urban': {
             'controlId': 'formUrban',
             'label': 'Urban',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -126,7 +126,7 @@ const Feature = (props) => {
         'ExtraUrban': {
             'controlId': 'formExtraUrban',
             'label': 'Extra Urban',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
@@ -136,7 +136,7 @@ const Feature = (props) => {
         'Co2Emissions': {
             'controlId': 'formCo2Emissions',
             'label': 'Co2 Emissions',
-            'inputType': 'text',
+            'inputType': 'number',
             'placeholder': 'e.g. 5',
             'validation': {
                 required: {value: true, message: "Input required."},
